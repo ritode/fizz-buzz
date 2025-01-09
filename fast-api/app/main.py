@@ -90,4 +90,4 @@ def get_data(product_id: int):
         }
 
 # Serve the React build folder as static files
-app.mount("/", StaticFiles(directory="../../react/build", html=True), name="static")
+# app.mount("/", StaticFiles(directory="../../react/build", html=True), name="static")

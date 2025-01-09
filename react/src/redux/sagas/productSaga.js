@@ -1,23 +1,18 @@
 import { takeLatest, put, call } from "redux-saga/effects";
-import axios from "axios";
 import { fetchProductDataSuccess, fetchProductDataFailure } from "../productActions";
+import { productApi } from "./apiService";
 
-// API call to fetch product data
-function fetchProductDataApi(productId) {
-  return axios.get(`http://127.0.0.1:8000/api/data/${productId}`);
-}
-
-// Worker saga
+// Worker saga: fetches product data
 function* fetchProductDataSaga(action) {
   try {
-    const response = yield call(fetchProductDataApi, action.payload);
+    const response = yield call(productApi.fetchProductData, action.payload);
     yield put(fetchProductDataSuccess(response.data));
   } catch (error) {
     yield put(fetchProductDataFailure(error.message));
   }
 }
 
-// Watcher saga
+// Watcher saga: watches for FETCH_PRODUCT_DATA_REQUEST actions
 function* productSaga() {
   yield takeLatest("FETCH_PRODUCT_DATA_REQUEST", fetchProductDataSaga);
 }
