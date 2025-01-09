@@ -1,0 +1,94 @@
+# Python bytecode
+*.py[cod]
+__pycache__/
+*.so
+*.pyd
+
+# C extensions
+*.c
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# pytest
+.cache/
+*.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.kate-swp
+*~
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Logs
+*.log
+*.out
+*.err
+
+# Database
+*.sqlite3
+*.db
+
+# Testing
+test-results/
+
+# Coverage reports
+.coverage
+.coverage.*
+.cache
+.nox/
+*.coverage
+
+# Pyre
+.pyre/
+
+# FastAPI specific
+*.envrc
+.env.*
+secrets.json
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*.lock
