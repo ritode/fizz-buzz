@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+import random
 
 # Create the FastAPI app instance
 app = FastAPI()
@@ -33,8 +34,14 @@ def login(credentials: dict):
 def get_data(product_id: int):
     if product_id == 1:
         return {
-            "cards": [
-                {"title": f"Card A{i + 1}", "description": f"Description for Card A{i + 1}", "cost": "$100", "change": "+5%"} for i in range(5)
+            'cards': [
+                {
+                    "title": f"Card A{i + 1}",
+                    "description": f"Description for Card A{i + 1}",
+                    "cost": "$100",
+                    "change": f"{random.choice(['+', '-'])}{random.randint(1, 10)}%"
+                }
+                for i in range(5)
             ],
             "table": [
                 {"country": f"Country A{i + 1}", "turnover": f"${i * 500}", "sales_margin": f"{i * 3}%", "sales_margin2": f"{i * 4}%"} for i in range(5)

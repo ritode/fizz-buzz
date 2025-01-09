@@ -31,6 +31,7 @@ const Login = () => {
       justifyContent="center"
       height="100vh"
     >
+      <Box>
       <Typography variant="h4" gutterBottom>
         Login
       </Typography>
@@ -67,6 +68,7 @@ const Login = () => {
           {error}
         </Typography>
       )}
+      </Box>
     </Box>
   );
 };
